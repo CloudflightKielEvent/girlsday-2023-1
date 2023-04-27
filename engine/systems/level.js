@@ -65,7 +65,7 @@ export class LevelSystem {
      */
     static checkProgressCondition() {
         // Switch to second level
-        if (GlobalGameState.current.score > 1 && SceneManager.currentScene.name === GlobalConfig.INITIAL_SCENE_NAME) {
+        if (GlobalGameState.current.score > 7 && SceneManager.currentScene.name === GlobalConfig.INITIAL_SCENE_NAME) {
             LevelSystem.switchLevel(GlobalConfig.SECOND_SCENE_NAME);
 
             return true;
@@ -73,8 +73,15 @@ export class LevelSystem {
 
 
         // Switch to third level
-        if (GlobalGameState.current.score > 3 && SceneManager.currentScene.name === GlobalConfig.SECOND_SCENE_NAME) {
+        if (GlobalGameState.current.score > 14 && SceneManager.currentScene.name === GlobalConfig.SECOND_SCENE_NAME) {
             LevelSystem.switchLevel(GlobalConfig.THIRD_SCENE_NAME);
+
+            return true;
+        }
+
+        // Switch to fourth level
+        if (GlobalGameState.current.score > 21 && SceneManager.currentScene.name === GlobalConfig.THIRD_SCENE_NAME) {
+            LevelSystem.switchLevel(GlobalConfig.FOURTH_SCENE_NAME);
 
             return true;
         }

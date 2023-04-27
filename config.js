@@ -20,11 +20,12 @@ export const KeyBinds = Object.freeze({
  * These will never change during game execution,
  */
 export const GlobalConfig = Object.freeze({
-    GAME_WINDOW_WIDTH: 500,
+    GAME_WINDOW_WIDTH: 700,
     GAME_WINDOW_HEIGHT: 500,
     INITIAL_SCENE_NAME: 'Beach world',
     SECOND_SCENE_NAME: 'Space-World',
     THIRD_SCENE_NAME: 'Cat World',
+    FOURTH_SCENE_NAME:'Desert World',
     IDEAL_TICK_TIME: 1000 / 60, // => ~60 fps,
     INITIAL_PLAYER_POSITION: new Vector2(300, 300),
     PLAYER_MOVEMENT_SPEED: 3,

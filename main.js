@@ -38,7 +38,7 @@ const defineCupcakeWorld = () => {
     cupcakeWorld.soundManager.addSfx('eat', 'sound/eat.ogg');
     cupcakeWorld.soundManager.addSfx('music', 'sound/techno.ogg');
     cupcakeWorld.createEntities = () => {
-        for (let i = 0; i <= 9; i++) {
+        for (let i = 0; i <= 13; i++) {
             const tileType = i === 0 ? TileType.LEFT :
                 i === 9 ? TileType.RIGHT :
                     TileType.MID;
@@ -68,7 +68,7 @@ const defineSpaceWorld = () => {
     spaceWorld.soundManager.addSfx('eat', 'sound/apple_bite.ogg');
     spaceWorld.soundManager.addSfx('music', 'sound/techno.ogg');
     spaceWorld.createEntities = () => {
-        for (let i = 0; i <= 9; i++) {
+        for (let i = 0; i <= 13; i++) {
             const tileType = i === 0 ? TileType.LEFT :
                 i === 9 ? TileType.RIGHT :
                     TileType.MID;
@@ -99,7 +99,7 @@ const defineForestWorld = () => {
     catWorld.soundManager.addSfx('eat', 'sound/apple_bite.ogg');
     catWorld.soundManager.addSfx('music', 'sound/techno.ogg');
     catWorld.createEntities = () => {
-        for (let i = 0; i <= 9; i++) {
+        for (let i = 0; i <= 13; i++) {
             const tileType = i === 0 ? TileType.LEFT :
                 i === 9 ? TileType.RIGHT :
                     TileType.MID;
@@ -109,6 +109,37 @@ const defineForestWorld = () => {
     };
 }
 
+
+const defineDesertWorld = () => {
+    const DesertWorld = new Scene(GlobalConfig.FOURTH_SCENE_NAME, false);
+    DesertWorld.imageManager.addBackground('images/background_colored_desert.png');
+    DesertWorld.setLightFont();
+    DesertWorld.imageManager.addImage('tile_left', 'images/tile_moon_left.png');
+    DesertWorld.imageManager.addImage('tile_mid', 'images/tile_moon_mid.png');
+    DesertWorld.imageManager.addImage('tile_right', 'images/tile_moon_right.png');
+    DesertWorld.imageManager.addImage('cupcake', 'images/cupcake.png');
+    DesertWorld.imageManager.addImage('fruit', 'images/fruit1.png');
+    DesertWorld.imageManager.addImage('apple', 'images/apple.png');
+    DesertWorld.imageManager.addImage('star', 'images/star.png');
+    DesertWorld.imageManager.addImage('player_default', 'images/cattss.svg');
+    DesertWorld.imageManager.addImage('player_hurt', 'images/cattss.svg');
+    DesertWorld.imageManager.addImage('player_jump', 'images/cattss.svg');
+    DesertWorld.imageManager.addImage('player_walk_1', 'images/cattss.svg');
+    DesertWorld.imageManager.addImage('player_walk_2', 'images/cattss.svg');
+    DesertWorld.imageManager.addImage('player_walk_3', 'images/cattss.svg');
+    DesertWorld.soundManager.addSfx('drop', 'sound/drop.mp3');
+    DesertWorld.soundManager.addSfx('eat', 'sound/apple_bite.ogg');
+    DesertWorld.soundManager.addSfx('music', 'sound/techno.ogg');
+    DesertWorld.createEntities = () => {
+        for (let i = 0; i <= 13; i++) {
+            const tileType = i === 0 ? TileType.LEFT :
+                i === 9 ? TileType.RIGHT :
+                    TileType.MID;
+
+            TileFactory.createTile(new Vector2(i * 50, GlobalConfig.GROUND_LEVEL), tileType);
+        }
+    };
+}
 const defineThirdWorld = () => {
     /*
      * TODO TASK
@@ -123,7 +154,8 @@ function setupScenes() {
     defineCupcakeWorld();
     defineSpaceWorld();
     defineForestWorld();
-    defineThirdWorld();
+    defineDesertWorld()
+    
 }
 
 /**

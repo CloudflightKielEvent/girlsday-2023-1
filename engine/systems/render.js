@@ -92,13 +92,37 @@ export class RenderSystem {
         GlobalDrawContext.fillText(GlobalGameState.current.score, 465, 27);
         GlobalDrawContext.fillText("Lives: " + GlobalGameState.current.lives, 350, 27);
         GlobalDrawContext.fillText("World: " + SceneManager.currentScene.name, 30, 27);
-        GlobalDrawContext.drawImage(
-            SceneManager.currentScene.imageManager.images.get('cupcake'),
-            440,
-            10,
-            20,
-            20
-        );
+
+        if (SceneManager.currentScene.name === GlobalConfig.INITIAL_SCENE_NAME) {
+            GlobalDrawContext.drawImage(
+                SceneManager.currentScene.imageManager.images.get('cupcake'),
+                440,
+                10,
+                20,
+                20
+            );
+        }
+
+        if (SceneManager.currentScene.name === GlobalConfig.SECOND_SCENE_NAME) {
+            GlobalDrawContext.drawImage(
+                SceneManager.currentScene.imageManager.images.get('fruit'),
+                440,
+                10,
+                20,
+                20
+            );
+        }
+
+        if (SceneManager.currentScene.name === GlobalConfig.THIRD_SCENE_NAME) {
+            GlobalDrawContext.drawImage(
+                SceneManager.currentScene.imageManager.images.get('apple'),
+                440,
+                10,
+                20,
+                20
+            );
+        }
+        
 
         for (const iEntity of RenderSystem.getRelevantEntities()) {
             if (iEntity.hasComponent(AnimatedSpriteComponent.identifier)) {
