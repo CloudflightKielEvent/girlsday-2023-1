@@ -41,6 +41,4 @@ TODO!!!
 
 > Have fun!
 
-## Changelog
-- Girlsday 2023 sync
 
