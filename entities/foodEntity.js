@@ -22,7 +22,7 @@ const FoodTypes = Object.freeze({
     FRUIT: {
         name: 'fruit',
         value: 3,
-        weight: 5
+        weight: 4
     },
     STAR: {
         name: 'star',
