@@ -28,7 +28,12 @@ const FoodTypes = Object.freeze({
         name: 'star',
         value: 10,
         weight: 7
-    }
+    },
+    APPLE: {
+        name: 'apple',
+        value: 3,
+        weight: 5
+    },
 });
 
 /**
@@ -53,6 +58,10 @@ export class FoodFactory {
 
         if (SceneManager.currentScene.name === GlobalConfig.SECOND_SCENE_NAME) {
             foodType = FoodTypes.FRUIT;
+        }
+
+        if (SceneManager.currentScene.name === GlobalConfig.THIRD_SCENE_NAME) {
+            foodType = FoodTypes.APPLE;
         }
 
         return new Entity(EntityTypes.FOOD)

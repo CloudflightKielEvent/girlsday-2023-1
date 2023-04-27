@@ -87,6 +87,7 @@ const defineForestWorld = () => {
     catWorld.imageManager.addImage('tile_right', 'images/tile_moon_right.png');
     catWorld.imageManager.addImage('cupcake', 'images/cupcake.png');
     catWorld.imageManager.addImage('fruit', 'images/fruit1.png');
+    catWorld.imageManager.addImage('apple', 'images/apple.png');
     catWorld.imageManager.addImage('star', 'images/star.png');
     catWorld.imageManager.addImage('player_default', 'images/cattss.svg');
     catWorld.imageManager.addImage('player_hurt', 'images/cattss.svg');
