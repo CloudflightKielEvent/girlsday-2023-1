@@ -7,6 +7,8 @@ import {
 import {LayerIndexes} from '../globals.js';
 import {CircleCollider} from '../engine/geometry/index.js';
 import {Entity, EntityTypes} from '../engine/entities/index.js';
+import { SceneManager } from '../engine/resourcemanagers/sceneManager.js';
+import { GlobalConfig } from '../config.js';
 
 /**
  * Various available food types.
@@ -45,7 +47,13 @@ export class FoodFactory {
          *  Come up with a rule on how to spawn different food types, e.g. randomly selecting one or spawning one every n items / seconds.
          *  Then implement that rule.
          */
-        const foodType = FoodTypes.CUPCAKE;
+
+
+        let foodType = FoodTypes.CUPCAKE;
+
+        if (SceneManager.currentScene.name === GlobalConfig.SECOND_SCENE_NAME) {
+            foodType = FoodTypes.FRUIT;
+        }
 
         return new Entity(EntityTypes.FOOD)
             .addComponent(new ConsumableComponent(foodType.value))
